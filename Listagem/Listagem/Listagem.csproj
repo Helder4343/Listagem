@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.2" />
+    <PackageReference Include="Unity" Version="5.8.11" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Listagem.Domain\Listagem.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Listagem.Infra.Data\Listagem.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ExibirLista.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InserirDados.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ExibirLista.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="HomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="InserirDados.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+</Project>
